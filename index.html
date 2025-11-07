@@ -172,18 +172,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-        }
-        
-        .about-img::before {
-            content: "Imagem da Psicóloga";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #3498db;
-            font-weight: 600;
-            text-align: center;
         }
         
         .about-img img {
@@ -505,8 +493,8 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-img">
-                    <!-- Placeholder para imagem - substitua pelo caminho real da imagem -->
-                    <!-- <img src="caminho/para/sua/imagem.jpg" alt="Dra. Ana Costa"> -->
+                    <!-- Imagem de uma psicóloga jovem -->
+                    <img src="https://images.unsplash.com/photo-1594824947933-d0501ba2fe65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Dra. Ana Costa">
                 </div>
                 <div class="about-text">
                     <h2>Sobre Mim</h2>
@@ -683,6 +671,15 @@
             if (window.innerWidth <= 768) {
                 document.querySelector('.nav-links').classList.remove('active');
             }
+        });
+
+        // Garantir que a imagem carregue
+        window.addEventListener('load', function() {
+            const img = document.querySelector('.about-img img');
+            img.onerror = function() {
+                // Se a imagem não carregar, usar uma alternativa
+                this.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"><rect width="400" height="400" fill="%23f5f7fa"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-size="18" fill="%233498db">Imagem da Psicóloga</text></svg>';
+            };
         });
     </script>
 </body>
