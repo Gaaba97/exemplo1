@@ -5,13 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dra. Camila Santos - Psicóloga Clínica</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         /* Reset e estilos gerais */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #2c553d;
+            --secondary: #d4af87;
+            --accent: #8b7355;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --text: #4a4a4a;
         }
         
         html {
@@ -19,10 +28,19 @@
         }
         
         body {
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
+            line-height: 1.7;
+            color: var(--text);
+            background-color: white;
+            font-family: 'Inter', sans-serif;
             font-size: 16px;
+            font-weight: 400;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark);
+            font-weight: 600;
+            line-height: 1.3;
         }
         
         .container {
@@ -33,74 +51,70 @@
         }
         
         section {
-            padding: 70px 0;
-        }
-        
-        h1 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            color: #2c3e50;
-        }
-        
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: #2c3e50;
-        }
-        
-        h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: #2c3e50;
+            padding: 80px 0;
         }
         
         p {
-            margin-bottom: 15px;
-            font-size: 1rem;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
         }
         
         .btn {
             display: inline-block;
-            padding: 12px 30px;
-            background-color: #3498db;
+            padding: 14px 32px;
+            background-color: var(--primary);
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 4px;
             transition: all 0.3s ease;
-            font-weight: 600;
+            font-weight: 500;
             border: none;
             cursor: pointer;
             font-size: 1rem;
+            letter-spacing: 0.5px;
         }
         
         .btn:hover {
-            background-color: #2980b9;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background-color: #234530;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(44, 85, 61, 0.2);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
         }
         
         /* Header e Navegação */
         header {
             background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            transition: all 0.3s;
         }
         
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 20px 0;
         }
         
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            color: #3498db;
+            color: var(--primary);
             text-decoration: none;
+            font-family: 'Playfair Display', serif;
         }
         
         .nav-links {
@@ -109,75 +123,120 @@
         }
         
         .nav-links li {
-            margin-left: 25px;
+            margin-left: 35px;
         }
         
         .nav-links a {
             text-decoration: none;
-            color: #333;
+            color: var(--dark);
             font-weight: 500;
             transition: color 0.3s;
-            font-size: 0.95rem;
+            font-size: 1rem;
+            position: relative;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
         }
         
         .nav-links a:hover {
-            color: #3498db;
+            color: var(--primary);
         }
         
         .mobile-menu {
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: #3498db;
+            color: var(--primary);
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #3498db, #8e44ad);
-            color: white;
-            padding: 130px 0 80px;
-            text-align: center;
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(248,249,250,0.9) 100%), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f8f9fa"/><path d="M0 0L100 100M100 0L0 100" stroke="%23e9ecef" stroke-width="1"/></svg>');
+            color: var(--dark);
+            padding: 180px 0 100px;
+            position: relative;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .hero-text {
+            flex: 1;
+        }
+        
+        .hero-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+        
+        .hero-image:hover img {
+            transform: scale(1.03);
         }
         
         .hero h1 {
-            font-size: 2.2rem;
+            font-size: 3.2rem;
             margin-bottom: 20px;
-            color: white;
+            color: var(--dark);
+            line-height: 1.2;
         }
         
         .hero p {
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            color: var(--text);
+            max-width: 500px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
         }
         
         /* Sobre */
         .about {
-            background-color: white;
+            background-color: var(--light);
         }
         
         .about-content {
             display: flex;
             align-items: center;
-            gap: 40px;
+            gap: 60px;
         }
         
         .about-img {
             flex: 1;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            background-color: #f5f7fa;
-            min-height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
         
         .about-img img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
             display: block;
         }
         
@@ -185,18 +244,35 @@
             flex: 1;
         }
         
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .about h2:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            bottom: -10px;
+            left: 0;
+            background-color: var(--secondary);
+        }
+        
         /* Serviços */
         .services {
-            background-color: #f5f7fa;
+            background-color: white;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
         }
         
         .section-title h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             position: relative;
             display: inline-block;
             padding-bottom: 15px;
@@ -210,47 +286,55 @@
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background-color: #3498db;
+            background-color: var(--secondary);
         }
         
         .section-title p {
             max-width: 600px;
-            margin: 0 auto;
+            margin: 20px auto 0;
+            font-size: 1.1rem;
         }
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
         
         .service-card {
             background-color: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             text-align: center;
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--primary);
         }
         
         .service-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
         }
         
         .service-icon {
-            font-size: 35px;
-            color: #3498db;
+            font-size: 42px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
             margin-bottom: 15px;
         }
         
         /* Contato */
         .contact {
-            background-color: white;
+            background-color: var(--light);
         }
         
         .contact-container {
             display: flex;
-            gap: 40px;
+            gap: 60px;
         }
         
         .contact-info {
@@ -260,86 +344,106 @@
         .contact-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         
         .contact-icon {
-            font-size: 18px;
-            color: #3498db;
+            font-size: 20px;
+            color: var(--primary);
             margin-right: 15px;
             margin-top: 5px;
+            width: 24px;
+            text-align: center;
         }
         
         .contact-form {
             flex: 1;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
         
         .form-group {
-            margin-bottom: 18px;
+            margin-bottom: 20px;
         }
         
         .form-group label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-weight: 500;
             font-size: 0.95rem;
+            color: var(--dark);
         }
         
         .form-control {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            padding: 14px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
             font-size: 1rem;
+            transition: border 0.3s;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
         }
         
         textarea.form-control {
-            min-height: 140px;
+            min-height: 150px;
             resize: vertical;
         }
         
         /* Footer */
         footer {
-            background-color: #2c3e50;
+            background-color: var(--dark);
             color: white;
-            padding: 40px 0 15px;
+            padding: 60px 0 20px;
         }
         
         .footer-content {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
         
         .footer-logo {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: white;
             margin-bottom: 15px;
             display: inline-block;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .footer-info p {
+            margin-bottom: 10px;
+            opacity: 0.8;
         }
         
         .social-links {
             display: flex;
-            gap: 12px;
+            gap: 15px;
         }
         
         .social-links a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 38px;
-            height: 38px;
+            width: 40px;
+            height: 40px;
             background-color: rgba(255,255,255,0.1);
             border-radius: 50%;
             color: white;
             text-decoration: none;
             transition: all 0.3s;
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
         
         .social-links a:hover {
-            background-color: #3498db;
+            background-color: var(--primary);
             transform: translateY(-3px);
         }
         
@@ -348,34 +452,42 @@
             padding-top: 20px;
             border-top: 1px solid rgba(255,255,255,0.1);
             font-size: 0.9rem;
+            opacity: 0.7;
         }
         
         /* Responsividade */
         @media (max-width: 992px) {
-            .about-content, .contact-container {
+            .hero-content, .about-content, .contact-container {
                 flex-direction: column;
             }
             
-            .about-img, .about-text, .contact-info, .contact-form {
+            .hero-image, .hero-text, .about-img, .about-text, .contact-info, .contact-form {
                 width: 100%;
             }
             
             .about-img {
                 max-width: 500px;
                 margin: 0 auto;
-                min-height: 350px;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
             }
         }
         
         @media (max-width: 768px) {
             section {
-                padding: 50px 0;
+                padding: 60px 0;
             }
             
             .nav-links {
                 display: none;
                 position: absolute;
-                top: 70px;
+                top: 80px;
                 left: 0;
                 width: 100%;
                 background-color: white;
@@ -390,7 +502,7 @@
             }
             
             .nav-links li {
-                margin: 10px 0;
+                margin: 12px 0;
             }
             
             .mobile-menu {
@@ -398,37 +510,38 @@
             }
             
             .hero {
-                padding: 120px 0 60px;
+                padding: 130px 0 60px;
             }
             
             .hero h1 {
-                font-size: 1.8rem;
+                font-size: 2.2rem;
             }
             
             .hero p {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
             
             h2 {
-                font-size: 1.6rem;
-            }
-            
-            h3 {
-                font-size: 1.3rem;
+                font-size: 2rem;
             }
             
             .footer-content {
                 flex-direction: column;
-                gap: 25px;
+                gap: 30px;
             }
             
             .services-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 25px;
             }
             
-            .about-img {
-                min-height: 300px;
+            .hero-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .btn {
+                text-align: center;
             }
         }
         
@@ -438,24 +551,19 @@
             }
             
             .hero h1 {
-                font-size: 1.6rem;
+                font-size: 1.9rem;
             }
             
             h2 {
-                font-size: 1.4rem;
-            }
-            
-            .btn {
-                padding: 10px 25px;
-                font-size: 0.95rem;
+                font-size: 1.8rem;
             }
             
             .service-card {
-                padding: 20px;
+                padding: 30px 20px;
             }
             
-            .about-img {
-                min-height: 250px;
+            .contact-form {
+                padding: 30px 20px;
             }
         }
     </style>
@@ -482,9 +590,19 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <h1>Cuidando da sua saúde mental com empatia</h1>
-            <p>Psicóloga clínica especializada em terapia cognitivo-comportamental, atendendo adultos e adolescentes com abordagem moderna e acolhedora.</p>
-            <a href="#contato" class="btn">Agende uma consulta</a>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Psicóloga Camila Santos</h1>
+                    <p>Especializada em Terapia Cognitivo-Comportamental, oferecendo um espaço seguro e acolhedor para seu desenvolvimento emocional e bem-estar mental.</p>
+                    <div class="hero-buttons">
+                        <a href="#contato" class="btn">Agendar Consulta</a>
+                        <a href="#servicos" class="btn btn-outline">Conhecer Serviços</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://raw.githubusercontent.com/Gaaba97/exemplo1/main/ChatGPT%20Image%207%20de%20nov.%20de%202025%2C%2016_32_39.png" alt="Dra. Camila Santos">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -493,15 +611,14 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-img">
-                    <!-- Imagem da sua psicóloga -->
                     <img src="https://raw.githubusercontent.com/Gaaba97/exemplo1/main/ChatGPT%20Image%207%20de%20nov.%20de%202025%2C%2016_32_39.png" alt="Dra. Camila Santos">
                 </div>
                 <div class="about-text">
                     <h2>Sobre Mim</h2>
-                    <p>Sou a Dra. Camila Santos, psicóloga clínica formada pela PUC-SP com especialização em Terapia Cognitivo-Comportamental. Acredito que a psicologia deve ser acessível e descomplicada, por isso utilizo uma linguagem próxima e métodos eficazes para ajudar meus pacientes.</p>
-                    <p>Minha abordagem combina técnicas comprovadas da TCC com elementos da psicologia positiva, focando não apenas na resolução de problemas, mas também no desenvolvimento de recursos internos e no fortalecimento emocional.</p>
-                    <p>Atendo principalmente jovens adultos e adolescentes, trabalhando com questões como ansiedade, autoestima, relacionamentos e desenvolvimento pessoal. Também realizo orientação profissional para quem está em processo de escolha de carreira.</p>
-                    <a href="#contato" class="btn">Entre em contato</a>
+                    <p>Sou a Dra. Camila Santos, psicóloga clínica formada pela Universidade de São Paulo (USP) com especialização em Terapia Cognitivo-Comportamental. Minha paixão é ajudar pessoas a superarem desafios emocionais e alcançarem uma vida mais plena e significativa.</p>
+                    <p>Acredito que a psicoterapia é um processo colaborativo, onde juntos podemos explorar seus pensamentos, emoções e comportamentos, desenvolvendo estratégias eficazes para lidar com as dificuldades do dia a dia.</p>
+                    <p>Com uma abordagem humanizada e baseada em evidências científicas, ofereço um ambiente seguro e acolhedor para que você possa se expressar livremente e trabalhar em direção aos seus objetivos de bem-estar mental.</p>
+                    <a href="#contato" class="btn">Entre em Contato</a>
                 </div>
             </div>
         </div>
@@ -512,7 +629,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Serviços</h2>
-                <p>Ofereço diferentes modalidades de atendimento para atender às suas necessidades</p>
+                <p>Ofereço diferentes modalidades de atendimento psicológico para atender suas necessidades específicas</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
@@ -520,7 +637,7 @@
                         <i class="fas fa-user-friends"></i>
                     </div>
                     <h3>Terapia Individual</h3>
-                    <p>Atendimento personalizado para adultos que buscam autoconhecimento, desenvolvimento pessoal ou tratamento para questões específicas como ansiedade, depressão e estresse.</p>
+                    <p>Atendimento personalizado para adultos que buscam autoconhecimento, desenvolvimento pessoal ou tratamento para questões como ansiedade, depressão e estresse.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -545,7 +662,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Entre em Contato</h2>
-                <p>Agende uma consulta ou tire suas dúvidas</p>
+                <p>Agende uma consulta ou tire suas dúvidas sobre meus serviços</p>
             </div>
             <div class="contact-container">
                 <div class="contact-info">
@@ -556,7 +673,7 @@
                         </div>
                         <div>
                             <h4>Endereço</h4>
-                            <p>Rua das Acácias, 456 - Vila Madalena<br>São Paulo - SP, 05442-000</p>
+                            <p>Rua das Flores, 123 - Jardim Paulista<br>São Paulo - SP, 01415-001</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -565,7 +682,7 @@
                         </div>
                         <div>
                             <h4>Telefone</h4>
-                            <p>(11) 98888-7777</p>
+                            <p>(11) 99999-9999</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -583,7 +700,7 @@
                         </div>
                         <div>
                             <h4>Horário de Atendimento</h4>
-                            <p>Segunda a Sexta: 9h às 18h<br>Sábado: 9h às 13h</p>
+                            <p>Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -592,15 +709,21 @@
                         </div>
                         <div>
                             <h4>Atendimento Online</h4>
-                            <p>Consultas por videoconferência disponíveis</p>
+                            <p>Consultas por videoconferência disponíveis para todo o Brasil</p>
                         </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="contact-form">
                     <h3>Envie uma Mensagem</h3>
                     <form id="contactForm">
                         <div class="form-group">
-                            <label for="name">Nome</label>
+                            <label for="name">Nome Completo</label>
                             <input type="text" id="name" class="form-control" required>
                         </div>
                         <div class="form-group">
@@ -613,7 +736,7 @@
                         </div>
                         <div class="form-group">
                             <label for="message">Mensagem</label>
-                            <textarea id="message" class="form-control" required></textarea>
+                            <textarea id="message" class="form-control" placeholder="Conte-me como posso ajudá-lo(a)..." required></textarea>
                         </div>
                         <button type="submit" class="btn">Enviar Mensagem</button>
                     </form>
@@ -626,9 +749,10 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div>
+                <div class="footer-info">
                     <a href="#" class="footer-logo">Dra. Camila Santos</a>
                     <p>Psicóloga Clínica - CRP: 06/12345</p>
+                    <p>Especializada em Terapia Cognitivo-Comportamental</p>
                 </div>
                 <div>
                     <h3>Redes Sociais</h3>
@@ -670,6 +794,15 @@
         window.addEventListener('scroll', function() {
             if (window.innerWidth <= 768) {
                 document.querySelector('.nav-links').classList.remove('active');
+            }
+            
+            // Header scroll effect
+            if (window.scrollY > 100) {
+                document.querySelector('header').style.padding = '0';
+                document.querySelector('header').style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                document.querySelector('header').style.padding = '';
+                document.querySelector('header').style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
             }
         });
 
