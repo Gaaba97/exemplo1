@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dra. Maria Silva - Psicóloga Clínica</title>
+    <title>Dra. Ana Costa - Psicóloga Clínica</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Reset e estilos gerais */
@@ -22,6 +22,7 @@
             line-height: 1.6;
             color: #333;
             background-color: #f9f9f9;
+            font-size: 16px;
         }
         
         .container {
@@ -32,16 +33,30 @@
         }
         
         section {
-            padding: 80px 0;
+            padding: 70px 0;
         }
         
-        h1, h2, h3 {
+        h1 {
+            font-size: 2.2rem;
             margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
             color: #2c3e50;
         }
         
         p {
             margin-bottom: 15px;
+            font-size: 1rem;
         }
         
         .btn {
@@ -55,6 +70,7 @@
             font-weight: 600;
             border: none;
             cursor: pointer;
+            font-size: 1rem;
         }
         
         .btn:hover {
@@ -77,11 +93,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 15px 0;
         }
         
         .logo {
-            font-size: 24px;
+            font-size: 1.5rem;
             font-weight: 700;
             color: #3498db;
             text-decoration: none;
@@ -93,7 +109,7 @@
         }
         
         .nav-links li {
-            margin-left: 30px;
+            margin-left: 25px;
         }
         
         .nav-links a {
@@ -101,6 +117,7 @@
             color: #333;
             font-weight: 500;
             transition: color 0.3s;
+            font-size: 0.95rem;
         }
         
         .nav-links a:hover {
@@ -109,26 +126,27 @@
         
         .mobile-menu {
             display: none;
-            font-size: 24px;
+            font-size: 1.5rem;
             cursor: pointer;
+            color: #3498db;
         }
         
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #3498db, #8e44ad);
             color: white;
-            padding: 150px 0 100px;
+            padding: 130px 0 80px;
             text-align: center;
         }
         
         .hero h1 {
-            font-size: 3rem;
+            font-size: 2.2rem;
             margin-bottom: 20px;
             color: white;
         }
         
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             max-width: 700px;
             margin: 0 auto 30px;
         }
@@ -141,7 +159,7 @@
         .about-content {
             display: flex;
             align-items: center;
-            gap: 50px;
+            gap: 40px;
         }
         
         .about-img {
@@ -168,11 +186,11 @@
         
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
         
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             position: relative;
             display: inline-block;
             padding-bottom: 15px;
@@ -189,15 +207,20 @@
             background-color: #3498db;
         }
         
+        .section-title p {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
         
         .service-card {
             background-color: white;
-            padding: 30px;
+            padding: 25px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             text-align: center;
@@ -209,9 +232,9 @@
         }
         
         .service-icon {
-            font-size: 40px;
+            font-size: 35px;
             color: #3498db;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         /* Contato */
@@ -221,7 +244,7 @@
         
         .contact-container {
             display: flex;
-            gap: 50px;
+            gap: 40px;
         }
         
         .contact-info {
@@ -231,11 +254,11 @@
         .contact-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         
         .contact-icon {
-            font-size: 20px;
+            font-size: 18px;
             color: #3498db;
             margin-right: 15px;
             margin-top: 5px;
@@ -246,13 +269,14 @@
         }
         
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
         
         .form-group label {
             display: block;
             margin-bottom: 5px;
             font-weight: 500;
+            font-size: 0.95rem;
         }
         
         .form-control {
@@ -260,11 +284,11 @@
             padding: 12px;
             border: 1px solid #ddd;
             border-radius: 5px;
-            font-size: 16px;
+            font-size: 1rem;
         }
         
         textarea.form-control {
-            min-height: 150px;
+            min-height: 140px;
             resize: vertical;
         }
         
@@ -272,17 +296,17 @@
         footer {
             background-color: #2c3e50;
             color: white;
-            padding: 50px 0 20px;
+            padding: 40px 0 15px;
         }
         
         .footer-content {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
         
         .footer-logo {
-            font-size: 24px;
+            font-size: 1.5rem;
             font-weight: 700;
             color: white;
             margin-bottom: 15px;
@@ -291,20 +315,21 @@
         
         .social-links {
             display: flex;
-            gap: 15px;
+            gap: 12px;
         }
         
         .social-links a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 38px;
+            height: 38px;
             background-color: rgba(255,255,255,0.1);
             border-radius: 50%;
             color: white;
             text-decoration: none;
             transition: all 0.3s;
+            font-size: 0.9rem;
         }
         
         .social-links a:hover {
@@ -316,6 +341,7 @@
             text-align: center;
             padding-top: 20px;
             border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
         }
         
         /* Responsividade */
@@ -327,9 +353,18 @@
             .about-img, .about-text, .contact-info, .contact-form {
                 width: 100%;
             }
+            
+            .about-img {
+                max-width: 500px;
+                margin: 0 auto;
+            }
         }
         
         @media (max-width: 768px) {
+            section {
+                padding: 50px 0;
+            }
+            
             .nav-links {
                 display: none;
                 position: absolute;
@@ -340,6 +375,7 @@
                 flex-direction: column;
                 padding: 20px;
                 box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                text-align: center;
             }
             
             .nav-links.active {
@@ -354,13 +390,57 @@
                 display: block;
             }
             
+            .hero {
+                padding: 120px 0 60px;
+            }
+            
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            h3 {
+                font-size: 1.3rem;
             }
             
             .footer-content {
                 flex-direction: column;
-                gap: 30px;
+                gap: 25px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                width: 95%;
+            }
+            
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+            .btn {
+                padding: 10px 25px;
+                font-size: 0.95rem;
+            }
+            
+            .service-card {
+                padding: 20px;
             }
         }
     </style>
@@ -370,7 +450,7 @@
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo">Dra. Maria Silva</a>
+                <a href="#" class="logo">Dra. Ana Costa</a>
                 <ul class="nav-links">
                     <li><a href="#home">Início</a></li>
                     <li><a href="#sobre">Sobre</a></li>
@@ -387,8 +467,8 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <h1>Cuidando da sua saúde mental</h1>
-            <p>Psicóloga clínica com mais de 10 anos de experiência, especializada em terapia cognitivo-comportamental e atendimento a adultos e adolescentes.</p>
+            <h1>Cuidando da sua saúde mental com empatia</h1>
+            <p>Psicóloga clínica especializada em terapia cognitivo-comportamental, atendendo adultos e adolescentes com abordagem moderna e acolhedora.</p>
             <a href="#contato" class="btn">Agende uma consulta</a>
         </div>
     </section>
@@ -398,14 +478,14 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-img">
-                    <!-- Imagem de placeholder - substitua pela foto real -->
-                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Dra. Maria Silva">
+                    <!-- Imagem de uma psicóloga jovem (placeholder) -->
+                    <img src="https://images.unsplash.com/photo-1594824947933-d0501ba2fe65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Dra. Ana Costa">
                 </div>
                 <div class="about-text">
                     <h2>Sobre Mim</h2>
-                    <p>Sou a Dra. Maria Silva, psicóloga clínica formada pela Universidade de São Paulo (USP) com mestrado em Psicologia Clínica. Atuo há mais de 10 anos ajudando pessoas a superarem desafios emocionais e desenvolverem uma vida mais plena e significativa.</p>
-                    <p>Minha abordagem é baseada na Terapia Cognitivo-Comportamental (TCC), uma das abordagens mais estudadas e eficazes para diversos transtornos psicológicos. Acredito que cada pessoa é única e merece um tratamento personalizado e acolhedor.</p>
-                    <p>Além do atendimento clínico, sou palestrante e já ministrei workshops sobre saúde mental em empresas e instituições de ensino. Também sou membro da Associação Brasileira de Psicologia (ABP).</p>
+                    <p>Sou a Dra. Ana Costa, psicóloga clínica formada pela PUC-SP com especialização em Terapia Cognitivo-Comportamental. Acredito que a psicologia deve ser acessível e descomplicada, por isso utilizo uma linguagem próxima e métodos eficazes para ajudar meus pacientes.</p>
+                    <p>Minha abordagem combina técnicas comprovadas da TCC com elementos da psicologia positiva, focando não apenas na resolução de problemas, mas também no desenvolvimento de recursos internos e no fortalecimento emocional.</p>
+                    <p>Atendo principalmente jovens adultos e adolescentes, trabalhando com questões como ansiedade, autoestima, relacionamentos e desenvolvimento pessoal. Também realizo orientação profissional para quem está em processo de escolha de carreira.</p>
                     <a href="#contato" class="btn">Entre em contato</a>
                 </div>
             </div>
@@ -461,7 +541,7 @@
                         </div>
                         <div>
                             <h4>Endereço</h4>
-                            <p>Rua das Flores, 123 - Jardim das Acácias<br>São Paulo - SP, 01234-567</p>
+                            <p>Rua das Acácias, 456 - Vila Madalena<br>São Paulo - SP, 05442-000</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -470,7 +550,7 @@
                         </div>
                         <div>
                             <h4>Telefone</h4>
-                            <p>(11) 99999-9999</p>
+                            <p>(11) 98888-7777</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -479,7 +559,7 @@
                         </div>
                         <div>
                             <h4>E-mail</h4>
-                            <p>contato@dra-mariasilva.com.br</p>
+                            <p>contato@dra-anacosta.com.br</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -488,7 +568,16 @@
                         </div>
                         <div>
                             <h4>Horário de Atendimento</h4>
-                            <p>Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
+                            <p>Segunda a Sexta: 9h às 18h<br>Sábado: 9h às 13h</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div>
+                            <h4>Atendimento Online</h4>
+                            <p>Consultas por videoconferência disponíveis</p>
                         </div>
                     </div>
                 </div>
@@ -523,8 +612,8 @@
         <div class="container">
             <div class="footer-content">
                 <div>
-                    <a href="#" class="footer-logo">Dra. Maria Silva</a>
-                    <p>Psicóloga Clínica - CRP: 00/00000</p>
+                    <a href="#" class="footer-logo">Dra. Ana Costa</a>
+                    <p>Psicóloga Clínica - CRP: 06/12345</p>
                 </div>
                 <div>
                     <h3>Redes Sociais</h3>
@@ -537,7 +626,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Dra. Maria Silva - Todos os direitos reservados</p>
+                <p>&copy; 2023 Dra. Ana Costa - Todos os direitos reservados</p>
             </div>
         </div>
     </footer>
@@ -560,6 +649,13 @@
             e.preventDefault();
             alert('Obrigada pelo seu contato! Em breve retornarei sua mensagem.');
             this.reset();
+        });
+        
+        // Fechar menu ao rolar a página (mobile)
+        window.addEventListener('scroll', function() {
+            if (window.innerWidth <= 768) {
+                document.querySelector('.nav-links').classList.remove('active');
+            }
         });
     </script>
 </body>
