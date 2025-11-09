@@ -227,17 +227,36 @@
             gap: 60px;
         }
         
-        .about-img {
+        .about-qualifications {
             flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
         }
         
-        .about-img img {
-            width: 100%;
-            height: auto;
-            display: block;
+        .qualification-item {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .qualification-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .qualification-icon {
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .qualification-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dark);
         }
         
         .about-text {
@@ -461,12 +480,12 @@
                 flex-direction: column;
             }
             
-            .hero-image, .hero-text, .about-img, .about-text, .contact-info, .contact-form {
+            .hero-image, .hero-text, .about-qualifications, .about-text, .contact-info, .contact-form {
                 width: 100%;
             }
             
-            .about-img {
-                max-width: 500px;
+            .about-qualifications {
+                max-width: 600px;
                 margin: 0 auto;
             }
             
@@ -535,6 +554,10 @@
                 gap: 25px;
             }
             
+            .about-qualifications {
+                grid-template-columns: 1fr;
+            }
+            
             .hero-buttons {
                 flex-direction: column;
                 gap: 10px;
@@ -564,6 +587,10 @@
             
             .contact-form {
                 padding: 30px 20px;
+            }
+            
+            .qualification-item {
+                padding: 20px 15px;
             }
         }
     </style>
@@ -610,15 +637,42 @@
     <section id="sobre" class="about">
         <div class="container">
             <div class="about-content">
-                <div class="about-img">
-                    <img src="https://raw.githubusercontent.com/Gaaba97/exemplo1/main/ChatGPT%20Image%207%20de%20nov.%20de%202025%2C%2016_32_39.png" alt="Dra. Camila Santos">
-                </div>
                 <div class="about-text">
                     <h2>Sobre Mim</h2>
                     <p>Sou a Dra. Camila Santos, psicóloga clínica formada pela Universidade de São Paulo (USP) com especialização em Terapia Cognitivo-Comportamental. Minha paixão é ajudar pessoas a superarem desafios emocionais e alcançarem uma vida mais plena e significativa.</p>
                     <p>Acredito que a psicoterapia é um processo colaborativo, onde juntos podemos explorar seus pensamentos, emoções e comportamentos, desenvolvendo estratégias eficazes para lidar com as dificuldades do dia a dia.</p>
                     <p>Com uma abordagem humanizada e baseada em evidências científicas, ofereço um ambiente seguro e acolhedor para que você possa se expressar livremente e trabalhar em direção aos seus objetivos de bem-estar mental.</p>
                     <a href="#contato" class="btn">Entre em Contato</a>
+                </div>
+                <div class="about-qualifications">
+                    <div class="qualification-item">
+                        <div class="qualification-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Formação</h3>
+                        <p>Graduação em Psicologia pela USP e especialização em TCC</p>
+                    </div>
+                    <div class="qualification-item">
+                        <div class="qualification-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3>Certificações</h3>
+                        <p>CRP: 06/12345 e diversos cursos de atualização na área</p>
+                    </div>
+                    <div class="qualification-item">
+                        <div class="qualification-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Abordagem</h3>
+                        <p>Terapia Cognitivo-Comportamental com foco humanizado</p>
+                    </div>
+                    <div class="qualification-item">
+                        <div class="qualification-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Experiência</h3>
+                        <p>Mais de 8 anos atendendo adultos e adolescentes</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -808,7 +862,7 @@
 
         // Garantir que a imagem carregue
         window.addEventListener('load', function() {
-            const img = document.querySelector('.about-img img');
+            const img = document.querySelector('.hero-image img');
             img.onerror = function() {
                 console.log('Erro ao carregar a imagem');
             };
